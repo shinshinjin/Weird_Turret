@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class WeirdTurret : MonoBehaviour
 {
-    public float ShootCoolTime = 0.5f;
+    public float ShootCoolTime = 0.1f;
     public GameObject BulletPrefab;
     public Transform FirePos;
     public float angleRange = 60f;
@@ -33,9 +33,9 @@ public class WeirdTurret : MonoBehaviour
         {
             TargetIn();
         }
-        else 
-        { 
-            TargetOut(); 
+        else
+        {
+            TargetOut();
         }
 
 
@@ -48,24 +48,24 @@ public class WeirdTurret : MonoBehaviour
 
     void TargetIn()
     {
-        DotValue = Mathf.Cos(Mathf.Deg2Rad * (angleRange / 2));
+        _elapsedTime += Time.deltaTime;
 
+        DotValue = Mathf.Cos(Mathf.Deg2Rad * (angleRange / 2));
         Direction = target.position - transform.position;
 
         if (Direction.magnitude < distance)
         {
-            //transform.LookAt(_targetting.Target.transform);
-            _elapsedTime += Time.deltaTime;
-
             if (Vector3.Dot(Direction.normalized, transform.forward) > DotValue)
             {
                 isCollision = true;
+                transform.LookAt(_targetting.Target.transform);
             }
             else
             {
                 isCollision = false;
             }
         }
+
         else
         {
             isCollision = false;

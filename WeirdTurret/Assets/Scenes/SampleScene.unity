@@ -252,10 +252,10 @@ MonoBehaviour:
   ShootCoolTime: 0.5
   BulletPrefab: {fileID: 8223150993367707979, guid: e32f4ab66ea34e64593fff9a12f94059, type: 3}
   FirePos: {fileID: 449912719}
-  angleRange: 30
+  angleRange: 60
   distance: 10
   isCollision: 0
-  DotValue: 3
+  DotValue: 10
   target: {fileID: 1591609822}
 --- !u!135 &449912722
 SphereCollider:
@@ -268,7 +268,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 10
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &618118994
 GameObject:

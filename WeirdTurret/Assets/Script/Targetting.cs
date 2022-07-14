@@ -8,7 +8,7 @@ public class Targetting : MonoBehaviour
     public GameObject Target { get; private set; }
 
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player")
         {
